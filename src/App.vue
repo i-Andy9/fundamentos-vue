@@ -1,15 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png"> 
+  <counter-vue name="Entraron" :start=initialNumber />
+  <counter-vue name="Salieron" :start=initialNumber />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script> 
+import CounterVue from './components/Counter.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { 
+    CounterVue
+  },
+  data(){
+    return{
+      initialNumber: 1
+    }
   }
 }
 </script>
