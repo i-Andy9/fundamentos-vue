@@ -27,10 +27,12 @@
         watch:{
             question(value, oldValue){ 
                 this.validQ=false
+                console.log({value})
 
                 if(!value.includes('?')) return
 
                 this.validQ=true
+                console.log({value})
                 // TODO: Realizar peticion http 
                 this.getAnswer()
             }
@@ -45,7 +47,9 @@
                     this.img = image
 
                 } catch (error) {
-                    console.log(error)
+                    console.log('IndecisionComponent: ', error )
+                    this.answer = 'No se pudo cargar del API'
+                    this.img    = null
                 }
             }
         }

@@ -1,10 +1,15 @@
 <template>
-    <h1>{{name || 'Counter '}}</h1>
+    <h2>Counter</h2>
+    <h1>{{name || 'Counter'}}</h1>
     <h3>{{counter}} <sup>{{exp}}</sup> = {{calculo}} </h3>
 
+    <p data-testId="nameC">{{nameTest}}</p>
+    <p data-tesId='Counter'>100</p>
+    <p data-tesId2='Counter'>{{counter}}</p>
+
     <div>
-       <button @click="increase"> +1 </button>
-       <button @click="decrease"> -1 </button>
+       <button data-tesId="btnIncrease" @click="increase"> +1 </button>
+       <button data-tesId="btnDecrease" @click="decrease"> -1 </button>
 
     </div>
 
@@ -17,6 +22,7 @@
             name:String,
             start:{
                 type:Number,
+                default:1,
                 validator(value){
                     return value>=1 
                 }
@@ -26,7 +32,8 @@
         data() {
             return {
                 counter: this.start,
-                exp:3
+                exp:3,
+                nameTest:'Ahh'
             }
         },
         methods: {
